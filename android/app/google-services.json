@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "528091540129",
+    "project_id": "projectlapangan-8b86a",
+    "storage_bucket": "projectlapangan-8b86a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528091540129:android:6b79fa7e8693e10bb09ee0",
+        "android_client_info": {
+          "package_name": "com.example.lapanganku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApqIR2qkoRjS_Y6HcswWm1_-S48Y310vM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
