@@ -53,45 +53,48 @@ class _ListRequestState extends State<ListRequest> {
                 String jamMulai = userData['jamBooking'] ?? '';
                 String jamSelesai = userData['jamSelesai'] ?? '';
                 String lapangan = userData['Lapangan'] ?? '';
-                String pembayaranAwal = userData['pembayaranAwal'] ?? '';
-                return ListTile(
-                  title: Text(namaBooking),
-                  subtitle: Text(tanggal),
-                  trailing: GestureDetector(
-                    child:
-                        const Icon(Icons.keyboard_double_arrow_right_rounded),
-                    onTap: () async {
-                      return showDialog<void>(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: const Text('Request Form'),
-                            content: Text(
-                              'Nama : $namaBooking\n'
-                              'Jenis lapangan : $lapangan\n'
-                              'pembayaran awal : $pembayaranAwal\n'
-                              'jam Mulai : $jamMulai\n'
-                              'jam Selesai $jamSelesai\n\n\n'
-                              'waiting for accepted by admin',
-                            ),
-                            actions: <Widget>[
-                              TextButton(
-                                style: TextButton.styleFrom(
-                                  textStyle:
-                                      Theme.of(context).textTheme.labelLarge,
-                                ),
-                                child: const Text('Close'),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
+                String pembayaranAwal = userData['PembayaranAwal'] ?? '';
+                return GestureDetector(
+                  onTap: () async {
+                    return showDialog<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Request Form'),
+                          content: Text(
+                            'Nama : $namaBooking\n'
+                            'Jenis lapangan : $lapangan\n'
+                            'pembayaran awal : $pembayaranAwal\n'
+                            'jam Mulai : $jamMulai\n'
+                            'jam Selesai $jamSelesai\n\n\n'
+                            'waiting for accepted by admin',
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle:
+                                    Theme.of(context).textTheme.labelLarge,
                               ),
-                            ],
-                          );
-                        },
-                      );
-                    },
+                              child: const Text('Close'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: ListTile(
+                    title: Text(namaBooking),
+                    subtitle: Text(tanggal),
+                    trailing: GestureDetector(
+                      child:
+                          const Icon(Icons.keyboard_double_arrow_right_rounded),
+                      onTap: () async {},
+                    ),
+                    // You can customize the ListTile further based on your data structure
                   ),
-                  // You can customize the ListTile further based on your data structure
                 );
               },
             );

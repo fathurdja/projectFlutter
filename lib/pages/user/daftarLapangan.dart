@@ -18,7 +18,8 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UserPage"),
+        title: const Text("Daftar Lapangan"),
+        centerTitle: true,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: Database.readData(),

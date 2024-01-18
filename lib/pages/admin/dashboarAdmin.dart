@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lapanganku/pages/admin/myfield.dart';
 import 'package:lapanganku/pages/firsPage.dart';
+import 'package:lapanganku/pages/listRequestAdmin.dart';
 
 class DashBoardAdmin extends StatefulWidget {
   const DashBoardAdmin({super.key});
@@ -81,7 +82,12 @@ class _MyDashBoardState extends State<DashBoardAdmin> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListRequestAdmin()));
+                    },
                     child: itemDashboard('List Request',
                         CupertinoIcons.list_bullet, Colors.deepPurple),
                   )

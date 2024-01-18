@@ -64,13 +64,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              "WELLCOME TO MY APP",
-              style: TextStyle(
-                  fontFamily: 'Khand',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20),
-            )
           ],
         ),
       ),

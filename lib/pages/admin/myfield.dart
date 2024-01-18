@@ -1,7 +1,6 @@
 import 'package:firebase_utilitas/firebase_utilitas.dart';
 import 'package:flutter/material.dart';
-import 'package:lapanganku/pages/listRequest.dart';
-
+import 'package:lapanganku/pages/listRequestAdmin.dart';
 
 class MenuAdmin extends StatefulWidget {
   const MenuAdmin({
@@ -30,7 +29,7 @@ class _MenuAdminState extends State<MenuAdmin> {
           title: const Text("Menu"),
         ),
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           height: double.infinity,
           width: double.infinity,
           child: Column(
@@ -54,7 +53,7 @@ class _MenuAdminState extends State<MenuAdmin> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ListRequest()));
+                                builder: (context) => const ListRequestAdmin()));
                         // ListRequestAdmin();
                       },
                       child: Container(
@@ -69,7 +68,7 @@ class _MenuAdminState extends State<MenuAdmin> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(16.0),
                                 topRight: Radius.circular(16.0),
                               ),
@@ -79,7 +78,7 @@ class _MenuAdminState extends State<MenuAdmin> {
                                 width: 90,
                               ),
                             ),
-                            SizedBox(height: 23),
+                            const SizedBox(height: 23),
                             Container(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 48, vertical: 23.8),
@@ -89,7 +88,7 @@ class _MenuAdminState extends State<MenuAdmin> {
                                       topLeft: Radius.circular(200))),
                               child: Text(
                                 "Lapangan $currentLapangan",
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                               ),
                             )
                           ],
@@ -108,7 +107,7 @@ class _MenuAdminState extends State<MenuAdmin> {
               //     MaterialPageRoute(builder: (context) => const AdminPage()));
             },
             backgroundColor: Colors.deepOrange,
-            child: Icon(Icons.add)));
+            child: const Icon(Icons.add)));
   }
 
 // ...
