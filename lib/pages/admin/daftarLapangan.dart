@@ -23,6 +23,7 @@ class _AdminPageState extends State<DaftarField> {
   final nomortelpon = TextEditingController();
   final jamBuka = TextEditingController();
   final jumlahLapangan = TextEditingController();
+  final rulesLapangan = TextEditingController();
   Map? data;
   final fs = FirebaseUtilitas();
   @override
@@ -74,8 +75,26 @@ class _AdminPageState extends State<DaftarField> {
               height: 20,
             ),
             TextInput(title: "jumlah Lapangan", controller: jumlahLapangan),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(8),
+              child: TextField(
+                controller: rulesLapangan,
+                maxLines:
+                    null, // Set null agar TextField bisa menangani banyak baris.
+                decoration: InputDecoration(
+                    hintText: "Enter your text here",
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: OutlineInputBorder()),
+              ),
+            ),
+            Text(
+                "*Rules berupa aturan-aturan yang berlaku saat ingin membooking atau sedang dilapangan"),
+            Text("*Mohon di isi dengan lengkap !!"),
             const SizedBox(
-              height: 250,
+              height: 180,
             ),
             Center(
                 child: ElevatedButton(

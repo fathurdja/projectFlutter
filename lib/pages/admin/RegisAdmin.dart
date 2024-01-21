@@ -19,7 +19,6 @@ class _RegisterState extends State<RegisterAdmin> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseFirestore db = FirebaseFirestore.instance;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,35 +92,60 @@ class _RegisterState extends State<RegisterAdmin> {
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: <Widget>[
-                                      textfield(
-                                        controller: fullname,
-                                        title: "fullname",
-                                      ),
+                                      TextFieldWithLabel(
+                                          controller: fullname,
+                                          title: "Enter your fullname ",
+                                          label: "Full Name"),
                                       const SizedBox(height: 20),
-                                      textfield(
-                                        controller: username,
-                                        title: "Username",
-                                      ),
+                                      TextFieldWithLabel(
+                                          controller: username,
+                                          title: "Enter your Username ",
+                                          label: "Username"),
                                       const SizedBox(height: 20),
-                                      textfield(
-                                        controller: email,
-                                        title: "Email",
-                                      ),
+                                      TextFieldWithLabel(
+                                          controller: email,
+                                          title: "Enter your Email ",
+                                          label: "Email"),
                                       Container(
-                                        padding: const EdgeInsets.all(10),
                                         decoration: BoxDecoration(
                                             border: Border(
                                                 bottom: BorderSide(
                                                     color:
                                                         Colors.grey.shade200))),
-                                        child: TextField(
-                                          controller: password,
-                                          obscureText: true,
-                                          decoration: const InputDecoration(
-                                              hintText: "Password",
-                                              hintStyle:
-                                                  TextStyle(color: Colors.grey),
-                                              border: InputBorder.none),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "Enter Your Password",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: const EdgeInsets.all(5),
+                                              decoration: BoxDecoration(
+                                                border: Border(
+                                                    bottom: BorderSide(
+                                                        color: Colors
+                                                            .grey.shade200)),
+                                              ),
+                                              child: TextField(
+                                                controller: password,
+                                                obscureText: true,
+                                                decoration:
+                                                    const InputDecoration(
+                                                        hintText: "Password",
+                                                        hintStyle:
+                                                            TextStyle(
+                                                                color: Colors
+                                                                    .grey),
+                                                        border:
+                                                            InputBorder.none),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
@@ -129,7 +153,7 @@ class _RegisterState extends State<RegisterAdmin> {
                                 ),
                               )),
                           const SizedBox(
-                            height: 220,
+                            height: 180,
                           ),
                           FadeInUp(
                               duration: const Duration(milliseconds: 1600),
@@ -216,23 +240,46 @@ class _RegisterState extends State<RegisterAdmin> {
   }
 }
 
-class textfield extends StatelessWidget {
-  const textfield({super.key, required this.controller, required this.title});
+class TextFieldWithLabel extends StatelessWidget {
+  const TextFieldWithLabel({
+    Key? key,
+    required this.controller,
+    required this.title,
+    required this.label,
+  }) : super(key: key);
+
   final TextEditingController controller;
   final String title;
+  final String label;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey.shade200))),
-      child: TextField(
-        controller: controller,
-        decoration: InputDecoration(
-            hintText: title,
-            hintStyle: const TextStyle(color: Colors.grey),
-            border: InputBorder.none),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+          ),
+          child: TextField(
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: title,
+              hintStyle: const TextStyle(color: Colors.grey),
+              border: InputBorder.none,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

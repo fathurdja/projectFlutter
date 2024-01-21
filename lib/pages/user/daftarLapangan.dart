@@ -44,20 +44,24 @@ class _UserPageState extends State<UserPage> {
                 String namaLapangan = userData['Nama_Lapangan'] ?? '';
                 String alamatLapangan = userData['Alamat_Lapangan'] ?? '';
 
-                return ListTile(
-                  title: Text(namaLapangan),
-                  subtitle: Text(alamatLapangan),
-                  trailing: GestureDetector(
-                    child:
-                        const Icon(Icons.keyboard_double_arrow_right_rounded),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => BookingScreen()));
-                    },
+                return GestureDetector(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const BookingScreen())),
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    child: ListTile(
+                      leading: const CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/images/Aroepala.jpeg"),
+                        radius: 20,
+                      ),
+                      title: Text(namaLapangan),
+                      subtitle: Text(alamatLapangan),
+                      trailing:
+                          const Icon(Icons.keyboard_double_arrow_right_rounded),
+                      // You can customize the ListTile further based on your data structure
+                    ),
                   ),
-                  // You can customize the ListTile further based on your data structure
                 );
               },
             );

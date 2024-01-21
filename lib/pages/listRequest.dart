@@ -67,7 +67,8 @@ class _ListRequestState extends State<ListRequest> {
                             'pembayaran awal : $pembayaranAwal\n'
                             'jam Mulai : $jamMulai\n'
                             'jam Selesai $jamSelesai\n\n\n'
-                            'waiting for accepted by admin',
+                            '*Waiting for accepted by admin\n'
+                            '*Finish the Payment On Payment Menu!!',
                           ),
                           actions: <Widget>[
                             TextButton(
@@ -106,6 +107,7 @@ class _ListRequestState extends State<ListRequest> {
               ),
             ),
           );
+          
         },
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lapanganku/pages/firsPage.dart';
 import 'package:lapanganku/pages/user/daftarLapangan.dart';
+import 'package:lapanganku/pages/user/payment.dart';
 import 'package:lapanganku/pages/user/userEvents.dart';
 
 class DashBoardUser extends StatefulWidget {
@@ -42,11 +43,21 @@ class _MyDashBoardState extends State<DashBoardUser> {
                   contentPadding: EdgeInsets.symmetric(horizontal: 30),
                   title: Text(
                     'Hello',
-                    style: TextStyle(fontSize: 30, fontFamily: 'SpaceGrotesk'),
+                    style: TextStyle(fontSize: 40, fontFamily: 'SpaceGrotesk'),
                   ),
                   subtitle: Text(
-                    'Good Morning',
-                    style: TextStyle(fontFamily: 'SpaceGrotesk'),
+                    'Wellcome Back',
+                    style: TextStyle(
+                        fontFamily: 'SpaceGrotesk',
+                        color: Colors.white,
+                        fontSize: 20),
+                  ),
+                  trailing: CircleAvatar(
+                    radius: 50,
+                    child: Icon(
+                      Icons.person,
+                      size: 50,
+                    ),
                   ),
                 ),
                 SizedBox(height: 30),
@@ -88,6 +99,16 @@ class _MyDashBoardState extends State<DashBoardUser> {
                     },
                     child: itemDashboard(
                         'Order', CupertinoIcons.list_bullet, Colors.deepPurple),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PaymentPage()));
+                    },
+                    child: itemDashboard(
+                        'Payment', CupertinoIcons.money_dollar, Colors.green),
                   )
                 ],
               ),
